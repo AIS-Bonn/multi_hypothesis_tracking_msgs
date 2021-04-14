@@ -12,18 +12,18 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 add_message_files(
-	FILES
-   ObjectDetection.msg
-   ObjectDetections.msg
-	Box.msg
-	EvaluationBox.msg
-	HypothesesBoxes.msg
-	HypothesesEvaluationBoxes.msg
-	HypothesesBoxesArray.msg
-	State.msg
-	HypothesesStates.msg
-	HypothesesFull.msg
-	HypothesesPointIndices.msg
+  FILES
+  Box.msg
+  EvaluationBox.msg
+  HypothesesBoxes.msg
+  HypothesesBoxesArray.msg
+  HypothesesEvaluationBoxes.msg
+  HypothesesFull.msg
+  HypothesesPointIndices.msg
+  HypothesesStates.msg
+  ObjectDetection.msg
+  ObjectDetections.msg
+  State.msg
 )
 
 generate_messages(
