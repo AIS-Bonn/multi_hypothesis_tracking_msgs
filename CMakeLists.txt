@@ -3,12 +3,16 @@ project(multi_hypothesis_tracking_msgs)
 
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 
+set(ROS_MSGS_PACKAGES
+  geometry_msgs
+  sensor_msgs
+  std_msgs
+)
+
 find_package(catkin REQUIRED COMPONENTS
-	geometry_msgs
-	std_msgs
-	sensor_msgs
-	message_generation
-	genmsg
+  genmsg
+  message_generation
+  ${ROS_MSGS_PACKAGES}
 )
 
 add_message_files(
@@ -27,14 +31,12 @@ add_message_files(
 )
 
 generate_messages(
-	DEPENDENCIES
-	std_msgs
-	geometry_msgs
-	sensor_msgs
+  DEPENDENCIES
+  ${ROS_MSGS_PACKAGES}
 )
 
 catkin_package(
-	CATKIN_DEPENDS message_runtime std_msgs geometry_msgs sensor_msgs
+  CATKIN_DEPENDS message_runtime ${ROS_MSGS_PACKAGES}
 )
 
 include_directories(
